@@ -1,0 +1,9 @@
+ <% todos.forEach((todo) => { %>
+    <li class="todo">
+        <input type="checkbox" id="todo-<%= todo._id %>" <%= todo.complete ? 'checked' : '' %> hx-put="/todo/<%= todo._id %>" hx-target="#main-display">
+        <label for="todo-<%= todo._id %>"><%= todo.title %></label>
+        <h3 hx-delete="/todo/<%= todo._id %>" hx-target="#main-display">
+            &cross;
+        </h3>
+    </li>
+    <% }) %>
